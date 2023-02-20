@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Huế</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+    	*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    /* hÃ nh Ä‘á»™ng cuá»™n */
+    scroll-behavior: smooth;
+ }
+body{
+    font-family: Arial, Helvetica, sans-serif;  
+    background: linear-gradient(to bottom, #B721FF, #2AF598, #fec051, #FEE140, #FA709A );
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+body:before{
+  content:'';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #21D4FD 75%);
+}
+#main{
+    background-color: #fff;
+    margin: -28px 125px;
+    
+}
+.abc{
+    background-color: #fff;
+}
+.img_header{
+    padding-top: 22px;
+    display: flex;
+    margin: 28px 0px 0px 56px;
+    width: 1113px;
+    height: 240px;
+}
+.img1_header {
+    width: 200px;
+    height: 200px;
+}
+.img2_header{
+    height: 200px;
+    width: 100%;
+} 
+#menu ul{ 
+    list-style-type: none;
+    text-align: center;  
+    border-top: 3px solid #e8e8e8;
+    border-bottom: 3px solid #e8e8e8;
+    margin: 0px 56px;
+}
+#menu li{
+    display: inline-block;
+    line-height: 40px;
+    padding: 8px 34px;
+    
+}
+#menu li a{
+    position: relative;
+    padding: 19px 54px;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold; 
+    font-family: 'Times New Roman', Times, serif;
+}
+#menu a::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    background-color: rgb(199, 15, 245);
+    position: absolute;
+    bottom: -3px;
+    left: 0px;
+    transition: all 0.4s ease-in-out;
+}
+#menu a:hover{
+    color:#3d033e;
+    background-color:rgb(249, 213, 255) ;
+}
+#menu a:hover::after{
+    width: 50%;
+    transform: translateX(100%);
+    cursor: pointer;
+}
+.slideshow{
+    width: 1114px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 2px;
+    padding-bottom: 26px;
+}   
+.dieuhung{
+    position: absolute;
+    top: 50%;
+    margin-left: 15px;  
+    display: none;
+}
+.dieuhung i{
+    color: #fff;
+    font-size: 35px;
+    
+}
+.slideshow:hover .dieuhung{
+    display: block;
+}
+.dieuhung i:last-child{
+   position: relative;
+   left: 1009px; 
+}
+.chuyen_slide{
+    width: 99999px; 
+    transition: 0.5s;
+}
+.chuyen_slide img{
+    width: 1114px;
+    height: 540px;
+    float: left;
+    border-radius: 10px;
+}
+#content-all{
+    margin: 0px 56px 24px 56px;
+    display: flex;
+    flex-direction: row;
+}
+.content{
+    display: flex;
+    width: 750px;
+    flex-direction: column;
+    margin-top: 2px;
+    border-top:3px solid #111 ;
+    margin-right: 32px;
+}
+#amthuc,#dulich{
+    padding-bottom: 46px;
+    margin-bottom: 2px;
+    border-bottom: 3px solid #111;
+}
+#amthuc{
+    margin-top: 1px;
+    border-top: 1px solid #111;
+}
+.amthuc-header,.dulich-header,
+.dacsan-header{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 18px 0 18px 0;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #111;  
+}
+.dulich-header,.dacsan-header{
+    border-top: 1px solid #111;
+}
+.amthuc-header h4,
+.dulich-header h4,
+.dacsan-header h4{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.dacsan-header h4{
+    margin-bottom: 2px;
+}
+.dacsan-header p{
+    font-size: 12px;
+    color:#999999;
+}
+.amthuc-content,
+.dulich-content
+{
+    display: flex;
+    flex-direction: row;
+}
+.amthuc-content-chudao,
+.dulich-content-chudao{
+    width: 400px;
+}
+.amthuc-content-chudao img,
+.dulich-content-chudao img{
+    width: 380px;
+    height: 215px;
+    border: 1px solid #f2f2f2;
+    margin-bottom: 15px;
+}
+.amthuc-content-chudao-1 a,
+.dulich-content-chudao-1 a{
+    text-decoration: none;
+    color: #111;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.2s ease-out 100ms;
+}
+.amthuc-content-chudao-1 a:hover,
+.dulich-content-chudao-1 a:hover{
+    color: rgb(208, 32, 197);
+    
+}
+.amthuc-content-chudao-1 .date-views,
+.dulich-content-chudao-1 .date-views{
+    margin: 14px 0px;
+    font-size: 13px;
+    color: #999999;
+}
+.amthuc-content-chudao-2 p,
+.dulich-content-chudao-2 p{
+    font-size: 14px;
+    color: #111111;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-bottom: 18px;
+}
+.like-share .like{
+    width: 80px;
+    margin: 0px 5px;
+}
+.like-share .share{
+    width: 60px;
+}
+.like-share .share, 
+.like-share .like{
+    background: rgb(0 105 255);
+    border: 1px solid  rgb(0 105 255);
+    height: 20px;
+    color:#fff;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+.amthuc-content-phu{
+}
+.amthuc-content-phu1,.amthuc-content-phu2,
+.amthuc-content-phu3,.amthuc-content-phu4,
+.dulich-content-phu1,.dulich-content-phu2,
+.dulich-content-phu3,.dulich-content-phu4{
+    display: flex;
+    flex-direction: row;
+    margin-left: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 2px;
+}
+.amthuc-content-phu2,.dulich-content-phu2{
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+.amthuc-content-phu3,.dulich-content-phu3{
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+.amthuc-content-phu4,.dulich-content-phu4{
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+.phu1-img,.phu2-img,
+.phu3-img,.phu4-img{
+    margin-right: 18px;
+}
+.amthuc-content-phu .phu1-img img,.amthuc-content-phu .phu2-img img,
+.amthuc-content-phu .phu3-img img,.amthuc-content-phu .phu4-img img,
+.dulich-content-phu .phu1-img img,.dulich-content-phu .phu2-img img,
+.dulich-content-phu .phu3-img img,.dulich-content-phu .phu4-img img{ 
+    width: 77px;
+    height: 77px;
+}
+.phu1-content,.phu2-content,
+.phu3-content,.phu4-content {
+    display: flex;
+    flex-direction: column;
+}
+.phu1-content a,.phu2-content a,
+.phu3-content a,.phu4-content a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #111111;
+    margin-bottom: 18px;
+    transition: all 0.2s ease-out 100ms;
+}
+.phu1-content a:hover,.phu2-content a:hover,
+.phu3-content a:hover,.phu4-content a:hover{
+    color: rgb(208, 32, 197);
+}
+.phu2-content >span,.phu1-content >span,
+.phu3-content >span,.phu4-content >span{
+    font-size: 13px;
+    color: #999999;
+    display: flex;
+    flex-direction: row;
+}
+.dacsan-content{
+
+}
+.dacsan-content-1 li,
+.dacsan-content-2 li{
+    border-radius: 3px;
+    border: 1px solid #aa8000;
+    margin-bottom: 28px;
+    display: inline-block;
+    width:234px;
+    text-align: center;
+    box-shadow: 2px 1px 3px rgba(119, 109, 117, 0.933)
+}
+.dacsan-content-1-first,
+.dacsan-content-2-first{
+    float: left;
+    margin-right: 24px;
+}
+.dacsan-content-1-bet,
+.dacsan-content-2-bet{
+    margin-right: 24px;
+}
+.dacsan-content-1-last,
+.dacsan-content-2-last{
+    float: right;
+}
+.dacsan-content-1 a,
+.dacsan-content-2 a{
+    text-decoration: none;
+}
+.dacsan-content-1 a:hover,
+.dacsan-content-2 a:hover{
+    opacity: 0.8;
+}
+.dacsan-content-1 img,
+.dacsan-content-2 img{
+    width: 200px;
+    height: 160px;
+    margin-bottom: 8px;
+}
+.dacsan-content-1 h2,
+.dacsan-content-2 h2{
+    font-size: 14px;
+    color: #111111;
+    margin: 12px 0px;
+}
+.dacsan-content-1 p,
+.dacsan-content-2 p{
+    text-align: left;
+    font-size: 12px;
+    color: #111111;
+    margin: 0px 14px 8px 16px;
+}
+.dacsan-buy{
+    margin-bottom: 18px;
+}
+.dacsan-buy p{
+    text-align: left;
+    margin: 20px 0px 24px 0px;
+    border-bottom: 2px solid #969696;
+    padding-bottom: 8px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.dacsan-buy li{
+    text-align: center;
+    display: inline-block;
+    width: 184px;
+}
+.dacsan-buy li:hover{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.dacsan-sanpham{
+    margin: 12px;
+}
+.dacsan-sanpham-1{
+    margin-bottom: 24px;
+}
+.dacsan-sanpham a{
+    text-decoration: none;
+}
+.dacsan-sanpham img{
+    width:150px;
+    height:125px ;
+    margin-bottom: 8px;
+}
+.dacsan-sanpham h3{
+    font-size: 14px;
+    font-weight: 300;
+    color: #000;
+    margin:0px 4px 8px 4px;
+}
+.dacsan-sanpham-1 h3:hover{
+    color: #90278d;
+}
+.dacsan-sanpham span{
+    font-size: 12px;
+    color: #6d6d6d;
+}
+.dacsan-sanpham-buy{    
+    color: #90278d;
+    border: 1px solid #90278d;
+    border-radius: 5px;
+    padding: 6px;
+}
+.dacsan-sanpham-2 a{
+    font-size: 14px;
+}
+.dacsan-sanpham-2 a:hover{
+    background-color: #90278d;
+    color: #fff;
+}
+/* sidebar */
+.sidebar{
+    width: 330px;
+}
+.search-content{
+    
+}
+.search-content .search-content-header h4{
+    padding-bottom: 12px;
+    border-bottom: 3px solid #111111;
+    width: 330px;
+    margin-bottom: 2px;
+    color: #111111;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.search-content-input{
+    border-top: 1px solid #111111;
+    position: relative;
+}
+.search-content-input input{
+    border: 1px solid #999999;
+    width: 330px;
+    height: 40px;
+    padding: 8px ;
+    margin: 18px 0px;
+    font-weight: 700; 
+}
+.search-content-input button{
+    font-size: 25px;
+    position: absolute;
+    right: 1px;
+    bottom: 20px;
+    border: none;
+    padding: 0px 8px;
+    background-color: #ffffff;
+      
+}
+.search-content-input button:hover i{
+    cursor: pointer;
+    opacity: 0.5;
+}
+.search-content-input i{
+    font-size: 25px;
+}
+
+.search-submit:hover{
+    cursor: pointer;
+    color: #90278d;
+}
+.ti-search{
+    background-color:white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.autobox{
+    display: none;
+}
+.autobox li{
+    margin-left: 6px;
+    list-style-type: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    
+}
+.active {
+   display: block;
+
+}
+.autobox li:hover{
+    color: #e61bf1;
+}
+/* sidebar-title-container */
+.sidebar-title-container{
+    padding-bottom: 1px;
+    border-bottom: 1px solid #000;
+}
+.sidebar-title-container ul{
+    border-bottom: 3px solid #111;
+}
+.sidebar-title-container li{
+    display: inline-block;
+    text-align: center;
+}
+.sidebar-title-container button{
+    background-color: #ffffff;
+    border: none;
+    padding: 10px 47px;
+    transition: all .2s ease 0s;
+    color: #111;
+    font-weight: bold;
+    font-size: 16px;
+}
+.sidebar-title-container button:hover   
+{
+    cursor: pointer;
+    background-color: #d523cf;
+    color: #ffffff;
+}
+
+/* sidebar-content-container */
+.sidebar-content-container-baimoi,
+.sidebar-content-container-docnhieu{
+    margin-top: 24px;
+}
+.sidebar-content-container-docnhieu{
+    display: block;
+}
+.sidebar-content-container-baimoi{
+    display: none;
+}
+.sidebar-content-container-docnhieu li,
+.sidebar-content-container-baimoi li{
+    display: flex;
+    flex-direction: row;
+}
+.sidebar-content-container-docnhieu-img img,
+.sidebar-content-container-baimoi-img img{
+    height: 70px;
+    width: 70px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+}
+.sidebar-content-container-docnhieu-content a,
+.sidebar-content-container-baimoi-content a{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #111;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    transition: all 0.2s ease-out 100ms;
+}
+.sidebar-content-container-docnhieu-content a:hover,
+.sidebar-content-container-baimoi-content a:hover{
+    color: #d523cf;
+}
+.sidebar-content-container-docnhieu-content span,
+.sidebar-content-container-baimoi-content span{
+    font-size: 13px;
+    color: #999999;
+}
+/* sidebar-support */
+.sidebar-support-header{
+    border-bottom: 1px solid #111;
+}
+.sidebar-support-header h4{
+    margin: 14px 0px 2px 0px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #111;
+}
+.sidebar-support-tagcloud{  
+    margin-top: 18px;
+}
+.sidebar-support-tagcloud a{
+    display: inline-block;
+    padding: 3px 5px;
+    margin-right:6px ;
+    margin-bottom:6px ;
+    border: 1px solid #111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+    color: #111;
+    line-height: 1.3rem;
+    transition: all 0.2s ease-out 100ms;
+}
+.sidebar-support-tagcloud a:hover{
+    background-color: #ce85ed;
+    border: 1px solid #66088e;
+    color: #66088e;
+}
+/* footer */
+.footer{
+    background-color:#e0c2ed;
+    padding-bottom: 40px;
+}
+.footer-content{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.footer-1,
+.footer-2,
+.footer-3,
+.footer-4{
+    padding-top: 48px;
+    width: 300px;
+    padding-left: 28px
+}
+.footer-1-header span,
+.footer-2-header span,
+.footer-3-header span,
+.footer-4-header span{
+    color: #3d033e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+}
+.footer-2-header h3,
+.footer-3-header h3,
+.footer-4-header h3{
+    margin-bottom: 12px;
+}
+.footer-2-content li,
+.footer-3-content li{
+    list-style-type: none;
+}
+.footer-2-content a,
+.footer-3-content a{
+    text-decoration: none;
+    color:#3d033e ;
+}
+.footer-2-content a:hover,
+.footer-3-content a:hover{
+    color:#a672a7 ;
+}
+.footer-1-header h3{
+    margin-bottom: 12px;
+}
+.footer-1-content-img img{
+    width: 263px;
+    height: 180px;
+    position: relative;
+    overflow: hidden; 
+}
+.footer-1-lh li{
+    list-style-type:none;
+    display: flex;
+    flex-direction: row;
+}
+.footer-1-lh-img{
+    height: 54px;
+    width: 54px;
+    margin-right: 12px;
+}
+.footer-1-lh-img img{
+    width: 55px;
+    height: 55px;
+    border: 1px solid #111;
+}
+.footer-1-lh-content{
+    display: flex;
+    flex-direction: column;
+}
+.footer-1-lh-content a{
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #770080;
+    margin: 2px 0px
+}
+.footer-1-lh-content span{
+    font-size: 12px;
+    color: #ffffff;
+}
+.footer-1-lh{
+    position: absolute;
+    left: 175px;
+    top: 2970px;
+}
+.footer-1-theodoi{
+    position: absolute;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 2px;
+    left: 175px;
+    top: 3110px;
+    
+}
+.footer-1-theodoi:hover{
+    cursor: pointer;
+    background-color: #f4f0f0;
+    transition: all 0.2s ease-out 100ms;
+}
+.footer-1-theodoi img{
+    width: 20px;
+    height: 20px;
+}
+.footer-1-theodoi a{
+    margin: 5px 0px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #111;
+}
+.footer-1-contry{
+    margin-top: 10px;
+}
+.footer-1-contry i{
+    margin-right: 10px;
+    display: inline-block;
+}
+.socials-list{
+    height: 60px;
+    text-align: center;
+    background-color: #3d033e;
+    padding: 20px;
+}
+.socials-list a{
+    text-decoration: none;
+    margin: 8px;
+}
+.socials-list i{
+    font-size: 20px;
+    color: #ffffff;
+    transition: all 0.3s ease-out 100ms;
+}
+.ti-facebook:hover,
+.ti-instagram:hover,
+.ti-twitter-alt:hover,
+.ti-linkedin:hover,
+.ti-youtube:hover{
+    color: #FF00FF;
+}
+    </style>
+</head> 
+<body>
+    <div id="main">
+        <div class="header">
+            <div class="abc">
+            </div>
+            <div class="img_header">
+                <img class="img1_header" src="./assets/img/Blog Hue.png" alt="">
+                <img class="img2_header"src="./assets/img/logo1_blog_hue.png" alt="">
+            </div>
+            <div id="menu">
+                <ul>
+                    <li>
+                        <a href="#">TRANG CHỦ</a>
+                    </li>
+                    <li>
+                        <a href="#amthuc">ẨM THỰC</a>
+                    </li>
+                    <li>
+                        <a href="#dulich">DU LỊCH</a>
+                    </li>
+                    <li>
+                        <a href="#dacsan">ĐẶC SẢN</a>
+                    </li>
+                </ul>
+            </div>    
+        </div>
+        <div class="slideshow">
+            <div class="dieuhung">
+                <i class="ti-arrow-circle-left" onclick="Back();"></i>
+                <i class="ti-arrow-circle-right" onclick="Next();"></i>
+            </div>
+            <div class="chuyen_slide">
+                <img src="./assets/img/Travel/1.jpg" alt="">//1140
+                <img src="./assets/img/Food/1.jpg" alt="">//2280
+                <img src="./assets/img/Travel/2.jpg" alt="">//3420
+                <img src="./assets/img/Special/1.jpg" alt="">//4560
+                <img src="./assets/img/Food/2.jpg" alt="">//5700
+                <img src="./assets/img/Special/2.jpg" alt="">//6840
+            </div>
+        </div>
+        <div id="content-all">
+            <div class="content">
+                <div id="amthuc">
+                    <div class="amthuc-header">
+                        <h4>ẨM THỰC</h4>
+                    </div>
+                    <div class="amthuc-content">
+                        <div class="amthuc-content-chudao">
+                            <img src="./assets/img/Food/1.jpg" alt="">
+                            <div class="amthuc-content-chudao-1">
+                                <a href="./amthuc/Quancommenau.html">TOP 10 Quán Cơm Ở Huế Ngon Chuẩn Mẹ Nấu. Ghé Thử Ngay!</a>
+                                <div class="date-views">
+                                    <span class="date">30/01/2023 </span>
+                                    <span class="views">
+                                        <span>/</span> 9231 VIEWS
+                                    </span>
+                            </div>
+                            <div class="amthuc-content-chudao-2">
+                                <p>Dạo một vòng ở đất cố đô, thực khách có thể tìm thấy rất nhiều quán cơm Huế. Tuy nhiên, để tìm được quán cơm ngon ở Huế, nấu theo kiểu phong cách gia đình thì không hẳn ai cũng biết. Những quán ăn ‘chuẩn cơm mẹ nấu’ được Blog Huế bật mí dưới đây chắc chắn sẽ khiến bạn ngất ngây, no căng bụng mới chịu đi về.</p>
+                                <div class="like-share">
+                                    <button class="like">
+                                        <i class="ti-thumb-up"></i>
+                                        Thích 
+                                        <span>10</span>
+                                    </button>
+                                    <button class="share">Chia sẻ</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="amthuc-content-phu">
+                            <div class="amthuc-content-phu1">
+                                <div class="phu1-img">
+                                    <img src="./assets/img/Food/3.jpg" alt="cơm hến">
+                                </div>
+                                <div class="phu1-content">
+                                    <a href="./amthuc/Quan_com_hen_hue.html">Top 10 Quán Cơm Hến Huế siêu ngon sạch sẽ rất đông khách</a>
+                                    <span>31/01/2023
+                                        <div class="like-share">
+                                            <button class="like">
+                                                <i class="ti-thumb-up"></i>
+                                                Thích 
+                                                <span>10</span>
+                                            </button>
+                                            <button class="share">Chia sẻ</button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="amthuc-content-phu2">
+                                <div class="phu2-img">
+                                    <img src="./assets/img/Food/4.jpg" alt="Bánh ép">
+                                </div>
+                                <div class="phu2-content">
+                                    <a href="./amthuc/Banh_ep_hue.html">Top 5 quán bánh ép Huế ngon nổi tiếng không thể bỏ lỡ.</a>
+                                    <span>31/01/2023
+                                        <div class="like-share">
+                                            <button class="like">
+                                                <i class="ti-thumb-up"></i>
+                                                Thích 
+                                                <span>10</span>
+                                            </button>
+                                            <button class="share">Chia sẻ</button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="amthuc-content-phu3">
+                                <div class="phu3-img">
+                                    <img src="./assets/img/Food/5.jpg" alt="Bánh ép">
+                                </div>
+                                <div class="phu3-content">
+                                    <a href="./amthuc/Banh_loc_hue.html">Top 11 địa chỉ bán Bánh Lọc Huế ngon bá cháy ăn 1 lần là thèm mãi</a>
+                                    <span>31/01/2023
+                                        <div class="like-share">
+                                            <button class="like">
+                                                <i class="ti-thumb-up"></i>
+                                                Thích 
+                                                <span>10</span>
+                                            </button>
+                                            <button class="share">Chia sẻ</button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="amthuc-content-phu4">
+                                <div class="phu4-img">
+                                    <img src="./assets/img/Food/6.jpg" alt="Bánh ép">
+                                </div>
+                                <div class="phu4-content">
+                                    <a href="./amthuc/Quan_bun_bo_hue.html">Top 10 quán bún bò ngon ở Huế gây thương nhớ nhất</a>
+                                    <span>31/01/2023
+                                        <div class="like-share">
+                                            <button class="like">
+                                                <i class="ti-thumb-up"></i>
+                                                Thích 
+                                                <span>10</span>
+                                            </button>
+                                            <button class="share">Chia sẻ</button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dulich">
+                    <div class="dulich-header">
+                        <h4>DU LỊCH</h4>
+                    </div>
+                    <div class="dulich-content">
+                        <div class="dulich-content-chudao">
+                            <img src="./assets/img/Travel/1.png" alt="">
+                            <div class="dulich-content-chudao-1">
+                                <a href="./dulich/Top17_dia_diem_du_lich.html">17 địa điểm du lịch đẹp có thể bạn chưa biết ở Huế</a>
+                                <div class="date-views">
+                                    <span class="date">30/01/2023 </span>
+                                    <span class="views">
+                                        <span>/</span> 9231 VIEWS
+                                    </span>
+                            </div>
+                            <div class="dulich-content-chudao-2">
+                                <p>Nhắc đến xứ Huế là ta lại liên tưởng đến nhiều công trình kiến trúc cổ cùng những cảnh sắc thiên nhiên mang nét thơ mộng, hữu tình trong không gian thư thái, tĩnh lặng của vùng đất cố đô cũ. Còn chờ đợi gì mà không ghi lại ngay một loạt những địa điểm du lịch hấp dẫn ở Huế và lên đường thôi!</p>
+                                <div class="like-share">
+                                    <button class="like">
+                                        <i class="ti-thumb-up"></i>
+                                        Thích 
+                                        <span>10</span>
+                                    </button>
+                                    <button class="share">Chia sẻ</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="dulich-content-phu">
+                            <div class="dulich-content-phu1">
+                                <div class="phu1-img">
+                                    <img src="./assets/img/Travel/1.jpg" alt="Làng hương">
+                                </div>
+                                <div class="phu1-content">
+                                    <a href="./dulich/Lang_huong.html">Làng hương Thủy Xuân Huế - Khám phá làng nghề 700 năm tuổi giữa lòng cố đô</a>
+                                    <span>31/01/2023
+                                        <div class="like-share">
+                                            <button class="like">
+                                                <i class="ti-thumb-up"></i>
+                                                Thích 
+                                                <span>10</span>
+                                            </button>
+                                            <button class="share">Chia sẻ</button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="amthuc-content-phu2">
+                                <div class="phu2-img">
+                                    <img src="./assets/img/Travel/3.jpg" alt="Đại nội huế">
+                                </div>
+                                <div class="phu2-content">
+                                    <a href="./dulich/Dai_Noi_Hue.html">Đại Nội Huế - Hướng dẫn tham quan tìm về dấu ấn lịch sử cố đô</a>
+                                    <span>31/01/2023
+                                        <div class="like-share">
+                                            <button class="like">
+                                                <i class="ti-thumb-up"></i>
+                                                Thích 
+                                                <span>10</span>
+                                            </button>
+                                            <button class="share">Chia sẻ</button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="amthuc-content-phu3">
+                                <div class="phu3-img">
+                                    <img src="./assets/img/Travel/4.jpg" alt="Cầu tràng tiền">
+                                </div>
+                                <div class="phu3-content">
+                                    <a href="./dulich/Cau_trang_tien.html">Cầu Tràng Tiền Huế - Chứng nhân lịch sử đẹp mãi theo thời gian</a>
+                                    <span>31/01/2023
+                                        <div class="like-share">
+                                            <button class="like">
+                                                <i class="ti-thumb-up"></i>
+                                                Thích 
+                                                <span>10</span>
+                                            </button>
+                                            <button class="share">Chia sẻ</button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="amthuc-content-phu4">
+                                <div class="phu4-img">
+                                    <img src="./assets/img/Travel/5.jpg" alt="Chùa thiên mụ">
+                                </div>
+                                <div class="phu4-content">
+                                    <a href="./dulich/Chua_Thien_Mu.html">Chùa Thiên Mụ, Điểm Đến Tâm Linh Nên Thơ Xứ Huế</a>
+                                    <span>31/01/2023
+                                        <div class="like-share">
+                                            <button class="like">
+                                                <i class="ti-thumb-up"></i>
+                                                Thích 
+                                                <span>10</span>
+                                            </button>
+                                            <button class="share">Chia sẻ</button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dacsan">
+                    <div class="dacsan-header">
+                        <h4>ĐẶC SẢN HUẾ</h4>
+                        <p>Những thương hiệu uy tín</p>
+                    </div>
+                    <div class="dacsan-content">
+                        <ul class="dacsan-content-1 ">
+                            <li class="dacsan-content-1-first">
+                                <a href="http://localhost:8080/Hue/MeXungController">
+                                    <h2>MÈ XỮNG THIÊN HƯƠNG</h2>
+                                    <img src="./assets/img/Special/1.jpeg" alt="MÈ XỬNG THIÊN HƯƠNG">
+                                    <p>Công ty TNHH Thiên Hương tiền thân là cơ sở sản xuất mè xửng Thiên Hương từ năm 1979 và được kế thừa nghề gia truyền từ năm 1940. Thiên Hương luôn mang...</p>
+                                </a>
+                            </li>
+                            <li class="dacsan-content-1-bet">
+                                <a href="http://localhost:8080/Hue/MaCoRiController">
+                                    <h2>MẮM CÔ RI HUẾ</h2>
+                                    <img src="./assets/img/Special/3.jpg" alt="MẮM CÔ RI HUẾ">
+                                    <p>Mỗi loại mắm ở hiệu Mắm Cô Ri Huế đều có nguyên liệu và cách thức chế biến khác nhau, tạo nên hương vị đặc trưng. Tất cả điều tuân theo các tiêu chí:...</p>
+                                </a>
+                            </li>
+                            <li class="dacsan-content-1-last">
+                                <a href="http://localhost:8080/Hue/DauTramController">
+                                    <h2>TINH DẦU TRÀM HUẾ</h2>
+                                    <img src="./assets/img/Special/4.jpg" alt="Tinh dầu tràm Huế Cung Đình Vỹ Dạ">
+                                    <p>Dầu tràm Huế nguyên chất được sản xuất tại Huế, thành phần hoàn toàn từ thiên nhiên. Giữ ấm, phòng ho, hỗ trợ điều trị chướng bụng đầy hơi, sổ mũi, ngạt mũi, khử sạch vi khuẩn....</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="dacsan-content-2 ">
+                            <li class="dacsan-content-2-first">
+                                <a href="http://localhost:8080/Hue/NemChaController">
+                                    <h2>NEM CHẢ BẢY KHÁNH</h2>
+                                    <img src="./assets/img/Special/5.jpg" alt="NEM CHẢ BẢY KHÁNH">
+                                    <p>Nem-Trả-Ché là một trong những đặc sản mỗi khi nhắc đến “ẩm thực Huế”, là món ăn thanh nhã cùng cách chuẩn bị giản tiện được nhiều người lựa chọn.</p>
+                                </a>
+                            </li>
+                            <li class="dacsan-content-2-bet">
+                                <a href="http://localhost:8080/Hue/TraController">
+                                    <h2>TRÀ CUNG ĐÌNH ĐỨC PHƯỢNG</h2>
+                                    <img src="./assets/img/Special/2.jpeg" alt="TRÀ CUNG ĐÌNH ĐỨC PHƯỢNG">
+                                    <p>Trà Cung Đình Đức Phượng sẽ là vệ sĩ sát cánh bảo vệ long thể của bạn, giúp cho long thể của bạn luôn sảng khoái mạnh khỏe, không bất an, đủ sức để...</p>
+                                </a>
+                            </li>
+                            <li class="dacsan-content-2-last">
+                                <a href="http://localhost:8080/Hue/TramHuongController">
+                                    <h2>TRẦM HƯƠNG HUẾ</h2>
+                                    <img src="./assets/img/Special/6.jpg" alt="TRẦM HƯƠNG HUẾ">
+                                    <p>Hương trầm Huế có mùi thơm dịu, phảng phất nhẹ nhàng mà sâu lắng. Trước đây muốn có hương trầm phải tìm cho được rễ trầm. Nhưng sau rễ trầm hiếm...</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="search-content">
+                    <div class="search-content-header">
+                        <h4>TÌM BÀI VIẾT</h4>
+                    </div>
+                    <div class="search-content-input">
+                                <input class="search-field" type="text"  placeholder="Search">
+                                <button>
+                                    <i class="ti-search"></i>
+                                </button>
+                    </div>
+                    <div class="autobox">
+                                <li>
+                                    TOP 10 Quán Cơm Ở Huế Ngon Chuẩn Mẹ Nấu. Ghé Thử Ngay!</li>
+                                <li>Top 10 quán bún bò ngon ở Huế gây thương nhớ nhất</li>
+                               <li>Top 11 địa chỉ bán Bánh Lọc Huế ngon bá cháy ăn 1 lần là thèm mãi</li>
+                               <li>Top 5 quán bánh ép Huế ngon nổi tiếng không thể bỏ lỡ.</li>
+                                <li>Top 10 Quán Cơm Hến Huế siêu ngon sạch sẽ rất đông khách</li>
+                                <li>17 địa điểm du lịch đẹp có thể bạn chưa biết ở Huế</li>
+                                <li>Làng hương Thủy Xuân Huế - Khám phá làng nghề 700 năm tuổi giữa lòng cố đô</li>
+                                <li>Đại Nội Huế - Hướng dẫn tham quan tìm về dấu ấn lịch sử cố đô</li>
+                                <li>Cầu Tràng Tiền Huế - Chứng nhân lịch sử đẹp mãi theo thời gian</li>
+                                <li>Chùa Thiên Mụ, Điểm Đến Tâm Linh Nên Thơ Xứ Huế</li>
+                                <li>Me xững Thiên Hương</li>
+                                <li>Mắm cô Ri Huế</li>
+                                <li>Đầu tràm Huế</li>
+                                <li>Nem chả Bảy Khánh</li>
+                                <li>Trà cung đình Đức Phượng</li>
+                                <li>Trầm hương Huế</li>
+                    </div>
+                </div>
+                <div class="sidebar-title-container">
+                    <ul>
+                        <li>
+                            <button id="js-docnhieu" >Đọc nhiều
+                            </button>
+                        </li>
+                        <li>
+                            <button id="js-baimoi"> Bài mới
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" sidebar-content-container">
+                    <div id="js-content-docnhieu" class="  sidebar-content-container-docnhieu">
+                        <ul>
+                            <li>
+                                <div class="sidebar-content-container-docnhieu-img">
+                                    <img src="./assets/img/Food/3.jpg" alt="cơm hến">
+                                </div>
+                                <div class="sidebar-content-container-docnhieu-content">
+                                    <a href="http://localhost:8080/Hue/amthuc/Quan_com_hen_hue.html">Top 10 Quán Cơm Hến Huế siêu ngon sạch sẽ rất đông khách</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sidebar-content-container-docnhieu-img">
+                                    <img src="./assets/img/Food/5.jpg" alt="Bánh lọc Huế">
+                                </div>
+                                <div class="sidebar-content-container-docnhieu-content">
+                                    <a href="http://localhost:8080/Hue/amthuc/Banh_loc_hue.html">
+                                        Top 11 địa chỉ bán Bánh Lọc Huế ngon bá cháy ăn 1 lần là thèm mãi</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sidebar-content-container-docnhieu-img">
+                                    <img src="./assets/img/Travel/4.jpg" alt="Cầu Trường Tiền">
+                                </div>
+                                <div class="sidebar-content-container-docnhieu-content">
+                                    <a href="./dulich/Cau_trang_tien.html">Cầu Tràng Tiền Huế - Chứng nhân lịch sử đẹp mãi theo thời gian</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sidebar-content-container-docnhieu-img">
+                                    <img src="./assets/img/Food/6.jpg" alt="Bún bò huế">
+                                </div>
+                                <div class="sidebar-content-container-docnhieu-content">
+                                    <a href="http://localhost:8080/Hue/amthuc/Quan_bun_bo_hue.html">Top 10 quán bún bò ngon ở Huế gây thương nhớ nhất</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sidebar-content-container-docnhieu-img">
+                                    <img src="./assets/img/Travel/1.jpg" alt="Làng hương thủy xuân">
+                                </div>
+                                <div class="sidebar-content-container-docnhieu-content">
+                                    <a href="./dulich/Lang_huong.html">
+                                        Làng hương Thủy Xuân Huế - Khám phá làng nghề 700 năm tuổi</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="js-content-baimoi"
+                    class="sidebar-content-container-baimoi">
+                        <ul>
+                            <li>
+                                <div class="sidebar-content-container-baimoi-img">
+                                    <img src="./assets/img/Food/4.jpg" alt="Bánh ép">
+                                </div>
+                                <div class="sidebar-content-container-baimoi-content">
+                                    <a href="http://localhost:8080/Hue/amthuc/Banh_ep_hue.html">Top 5 quán bánh ép Huế ngon nổi tiếng không thể bỏ lỡ</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sidebar-content-container-baimoi-img">
+                                    <img src="./assets/img/Travel/3.jpg" alt="Đại nội Huế">
+                                </div>
+                                <div class="sidebar-content-container-baimoi-content">
+                                    <a href="./dulich/Dai_Noi_Hue.html">
+                                        Đại Nội Huế - Hướng dẫn tham quan tìm về dấu ấn lịch sử cố đô</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sidebar-content-container-baimoi-img">
+                                    <img src="./assets/img/Travel/4.jpg" alt="Cầu Trường Tiền">
+                                </div>
+                                <div class="sidebar-content-container-baimoi-content">
+                                    <a href="./dulich/Cau_trang_tien.html">Cầu Tràng Tiền Huế - Chứng nhân lịch sử đẹp mãi theo thời gian</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sidebar-content-container-baimoi-img">
+                                    <img src="./assets/img/Food/6.jpg" alt="Bún bò huế">
+                                </div>
+                                <div class="sidebar-content-container-baimoi-content">
+                                    <a href="http://localhost:8080/Hue/amthuc/Quan_bun_bo_hue.html">Top 10 quán bún bò ngon ở Huế gây thương nhớ nhất</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sidebar-content-container-baimoi-img">
+                                    <img src="./assets/img/Travel/1.jpg" alt="Làng hương thủy xuân">
+                                </div>
+                                <div class="sidebar-content-container-baimoi-content">
+                                    <a href="./dulich/Lang_huong.html">
+                                        Làng hương Thủy Xuân Huế - Khám phá làng nghề 700 năm tuổi</a>
+                                    <span>31/01/2023
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="sidebar-support">
+                    <div class="sidebar-support-header">
+                        <h4>
+                            BẠN QUAN TÂM CHỦ ĐỀ GÌ?
+                        </h4>
+                    </div>
+                    <div class="sidebar-support-tagcloud">
+                        <a href="">Book khách sạn Huế</a>
+                        <a href="">Quán ăn vặt giá rẻ</a>
+                        <a href="">Quán cơm gia đình</a>
+                        <a href="">Quán nhậu ngon tại Huế </a>
+                        <a href="">Quán bánh lọc ngon tại Huế</a>
+                        <a href="">Địa điểm check-in đẹp</a>
+                        <a href="">Địa điểm bán đồ lưu niệm tại huế</a>
+                        <a href="">Quán bún hến ngon</a>
+                        <a href="">Phố đi bộ</a>
+                        <a href="">Quán cafe đẹp</a>
+                        <a href="">Đồi Thiên An</a>
+                        <a href="">Đồi Vọng Cảnh</a>
+                        <a href="">Biển Thuận An</a>
+                        <a href="">Đại nội huế</a>
+                        <a href="">Lăng Tự Đức</a>
+                        <a href="">Bánh ép Thuận An</a>
+                        <a href="">Mắm tôm huế</a>
+                        <a href="">Chợ Đông Ba</a>
+                        <a href="">Bánh ép Lê Ngô Cát</a>
+                        <a href="">Phố Tây</a>
+                        <a href="">Cầu Trường Tiền</a>
+                        <a href="">Quán bún bò bà Đào</a>
+                        <a href="">Lăng Minh Mạng</a>
+                        <a href="">Quốc học Huế</a>
+                        <a href="">Sông Hương</a>
+                        <a href="">Nhà thờ Phủ Cam</a>
+                        <a href="">Lăng Khải Định</a>
+                        <a href="">Cung An Định</a>
+                        <a href="">Chùa Thiên Mụ</a>
+                        <a href="">Thiền viện Trúc Lâm Bạch Mã</a>
+                        <a href="">Chùa Từ Hiếu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-1">
+                    <div class="footer-1-header">
+                        <h3>
+                            <span>
+                                LIKE ĐỂ BIẾT THÊM NHỮNG THÔNG TIN HỮU ÍCH KHI ĐẾN HUẾ
+                           </span>   
+                        </h3>
+                    </div>
+                    <div class="footer-1-content">
+                        <div class="footer-1-content-img">
+                            <img src="./assets/img/Food/3.jpg" alt="">
+                        </div>
+                        <div class="footer-1-lh">
+                            <ul>
+                                <li>
+                                    <div class="footer-1-lh-img">
+                                        <img src="./assets/img/Blog Hue.png" alt="">
+                                    </div>
+                                    <div class="footer-1-lh-content">
+                                        <a href="">Blog Huế</a>
+                                        <span>9999 người theo dõi</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-1-theodoi">
+                            <img src="./assets/img/logo_facebook.png" alt="">
+                            <a href="">Thích trang</a>
+                            
+                        </div>
+                    </div>
+                    <div class="footer-1-contry">
+                        <p>
+                            <i class="ti-location-pin"></i>Thừa Thiên Huế
+                        </p>
+                        <p>
+                            <i class="ti-mobile">
+                            </i>Phone:<a href="tel:0123456789">0123456789
+                            </a>
+                        </p>
+                        <p>
+                            <i class="ti-email"></i>Email: <a href="mailto: mail@mail.com">mail@mail.com </a> 
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-2">
+                    <div class="footer-2-header">
+                        <h3>
+                            <span>THÔNG TIN</span>
+                        </h3>
+                    </div>
+                    <div class="footer-2-content">
+                        <ul>
+                            <li>
+                                <a href="">Giới thiệu</a>
+                            </li>
+                            <li>
+                                <a href="">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="footer-3">
+                        <div class="footer-3-header">
+                            <h3>
+                                <span>CHÍNH SÁCH</span>
+                            </h3>
+                        </div>
+                        <div class="footer-3-content">
+                            <ul >
+                                <li>
+                                    <a href="">Chính sách bảo mật</a>
+                                </li>
+                                <li>
+                                    <a href="">Chính sách bản quyền</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                </div>
+                <div class="footer-4">
+                        <div class="footer-4-header">
+                            <h3>
+                                <span>ĐỐI TÁC</span>
+                            </h3>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="socials-list">
+            <a href=""><i class="ti-facebook"></i></a> 
+            <a href=""><i class="ti-instagram"></i></a>
+            <a href=""><i class="ti-twitter-alt"></i></a>
+            <a href=""><i class="ti-linkedin"></i></a> 
+            <a href=""><i class="ti-youtube"></i></a> 
+        </div>
+    </div>
+</body>
+<script>
+    // slideshow
+    var kichthuoc = document.getElementsByClassName('slideshow')[0].clientWidth;
+    var chuyenslide = document.getElementsByClassName('chuyen_slide')[0];
+    var chuyen = 0;
+    var img = chuyenslide.getElementsByTagName("img");
+    var max = kichthuoc * img.length;
+    max -= kichthuoc;
+    function Next(){
+        if(chuyen<max){
+             chuyen += kichthuoc;
+        }else chuyen = 0;
+        chuyenslide.style.marginLeft = '-' + chuyen +'px';  
+    }
+    function Back(){
+        if(chuyen==0){
+             chuyen=max;
+        }else chuyen-=kichthuoc;
+        chuyenslide.style.marginLeft = '-' + chuyen +'px';
+    }
+    // hàm tự động chuyển ảnh
+    setInterval(function(){
+        //công việc cần thực hiện   
+        Next();  
+    },3000)
+</script>
+<script>
+    const btnDocNhieu = document.getElementById("js-docnhieu");
+    var btnBaiMoi = document.getElementById("js-baimoi");
+    var ContentDocNhieu = document.getElementById('js-content-docnhieu');
+    var ContentBaiMoi = document.getElementById('js-content-baimoi');
+    let DocNhieu = document.getElementById('js-tendocnhieu');
+    let BaiMoi = document.getElementById('js-tenbaimoi');
+    btnDocNhieu.onclick = function(){
+        btnDocNhieu.style.background = '#d523cf';
+        btnDocNhieu.style.color='#ffffff';
+        btnBaiMoi.style.background = '#ffffff';
+        btnBaiMoi.style.color='#111';
+        document.getElementById("js-content-docnhieu").style.display="block"; 
+        document.getElementById("js-content-baimoi").style.display="none"; 
+    }
+    btnBaiMoi.onclick = function(){
+        btnBaiMoi.style.background = '#d523cf';
+        btnBaiMoi.style.color='#ffffff';
+        btnDocNhieu.style.background = '#ffffff';
+        btnDocNhieu.style.color='#111';
+        document.getElementById("js-content-baimoi").style.display="block";   
+        document.getElementById("js-content-docnhieu").style.display="none"; 
+    }
+</script>
+<script>
+    const inputSearch = document.querySelector(".search-field");
+    const autoBox = document.querySelector(".autobox");
+    console.log(autoBox);
+    inputSearch.onkeyup = (e) =>{
+        // console.log(e.target.value);
+        let checkData = e.target.value;
+        let recomentlist = ["TOP 10 Quán Cơm Ở Huế Ngon Chuẩn Mẹ Nấu. Ghé Thử Ngay!",
+                        "Top 10 quán bún bò ngon ở Huế gây thương nhớ nhất",
+                        "Top 11 địa chỉ bán Bánh Lọc Huế ngon bá cháy ăn 1 lần là thèm mãi",
+                    "Top 5 quán bánh ép Huế ngon nổi tiếng không thể bỏ lỡ.",
+                "Top 10 Quán Cơm Hến Huế siêu ngon sạch sẽ rất đông khách",
+            "17 địa điểm du lịch đẹp có thể bạn chưa biết ở Huế",
+        "Chùa Thiên Mụ, Điểm Đến Tâm Linh Nên Thơ Xứ Huế",
+    "Cầu Tràng Tiền Huế - Chứng nhân lịch sử đẹp mãi theo thời gian",
+"Đại Nội Huế - Hướng dẫn tham quan tìm về dấu ấn lịch sử cố đô",
+"Làng hương Thủy Xuân Huế - Khám phá làng nghề 700 năm tuổi giữa lòng cố đô",
+"Me xững Thiên Hương","Mắm cô Ri Huế","Tinh dầu tràm Huế","Nem chả Bảy Khánh","Trà cung đình Dức Phượng","Trầm hương Huế"]
+        let dataArray=[];
+        if(checkData){
+            dataArray=recomentlist.filter((data)=>{
+                return data.toLocaleLowerCase().startsWith(checkData.toLocaleLowerCase());
+            })
+            console.log(dataArray);
+            dataArray = dataArray.map((data)=>{
+                return data = '<li>' + data + '</li>'
+            })
+            autoBox.classList.add('active');
+            showAddress(dataArray);
+            let liItem = document.querySelectorAll(".autobox li");
+            for(let i = 0; i < liItem.length;i++){
+                liItem[i].addEventListener("click",function(){
+                    inputSearch.value = liItem[i].innerHTML;
+                })
+            }   
+        }else{
+            autoBox.classList.remove('active');
+        }
+    }
+    function showAddress (list){
+        let listData
+        if(!list.length){
+            listData = '<li>' +inputSearch.value + '</li>'
+        }else{
+            listData = list.join('')
+        }
+        autoBox.innerHTML = listData
+    }  
+</script>
+</html>
